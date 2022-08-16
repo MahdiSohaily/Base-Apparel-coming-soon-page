@@ -51,7 +51,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background: url("./images/bg-pattern-desktop.svg"),
+  background:
+    url("./images/bg-pattern-desktop.svg"),
     linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   background-repeat: no-repeat;
   background-position: center;
@@ -83,6 +84,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -111,15 +113,19 @@ main {
       "header hero"
       "section hero";
   }
+
 }
+
 header {
   grid-area: header;
   height: fit-content;
 }
+
 .hero-image {
   grid-area: hero;
   height: inherit;
 }
+
 .hero-image picture {
   background-color: rebeccapurple;
   height: inherit;
@@ -132,8 +138,8 @@ header {
 section {
   grid-area: section;
 }
-/* Utility classes */
 
+/* Utility classes */
 .bg-gradient-primary {
   background-image: linear-gradient(
     135deg,
@@ -141,6 +147,7 @@ section {
     hsl(0, 100%, 98%)
   );
 }
+
 .bg-gradient-secondary {
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
