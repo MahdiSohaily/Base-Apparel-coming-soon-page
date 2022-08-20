@@ -112,6 +112,7 @@ main {
     grid-template-areas:
       "header hero"
       "section hero";
+      grid-template-rows: auto 1fr;
   }
 }
 
