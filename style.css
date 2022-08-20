@@ -10,12 +10,14 @@
   --fw-medium: 400;
   --fw-bold: 600;
   --size-100: 0.5em;
+  --size-150: 0.75em;
   --size-200: 1em;
   --size-300: 1.5em;
   --size-400: 2em;
   --size-500: 3em;
   --size-600: 3.5em;
   --size-700: 4em;
+  --size-750: 4.5em;
   --size-800: 5em;
   --size-900: 7em;
   --size-xl: 9em;
@@ -54,8 +56,7 @@ body {
   background:
     url("./images/bg-pattern-desktop.svg"),
     linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
   background-size: cover;
 }
 
@@ -69,14 +70,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+  height: auto;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -103,41 +97,106 @@ main {
     "header"
     "hero"
     "section";
-  align-items: start;
+  grid-template-rows: auto auto auto;
 }
 
-@media screen and (min-width: 40em) {
+header {
+  grid-area: header;
+  padding: var(--size-400);
+}
+
+.hero-image {
+  grid-area: hero;
+}
+
+.hero-image picture {
+  height: inherit;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: inherit;
+  object-fit: fill;
+}
+
+section {
+  grid-area: section;
+  text-align: center;
+  padding: var(--size-750) var(--size-300) var(--size-500) var(--size-300);
+}
+
+input[type='email'] {
+  padding: var(--size-150) var(--size-300);
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--desaturated-red);
+  border-radius: 100vmax;
+}
+
+.group {
+  margin-block: var(--size-200);
+  width: 100%;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 100vmax;
+  box-shadow: 0 1px 8px var(--desaturated-red);
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--desaturated-red);
+}
+
+::placeholder {
+  color: var(--desaturated-red);
+}
+
+@media screen and (min-width: 60em) {
   main {
     display: grid;
     grid-template-areas:
       "header hero"
       "section hero";
-      grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 60% 40%;
   }
-}
 
-header {
-  grid-area: header;
-  height: fit-content;
-}
+  .hero-image {
+    grid-area: hero;
+    height: inherit;
+  }
 
-.hero-image {
-  grid-area: hero;
-  height: inherit;
-}
+  .hero-image picture {
+    height: inherit;
+  }
 
-.hero-image picture {
-  background-color: rebeccapurple;
-  height: inherit;
-}
+  section {
+    grid-area: section;
+    text-align: left;
+  }
 
-.hero-image img {
-  object-fit: cover;
-  border-radius: 50%;
-}
+  .group {
+    width: 70%;
+  }
 
-section {
-  grid-area: section;
+  input[type='email'] {
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    border-radius: 100vmax;
+    color: var(--desaturated-red);
+  }
+
+  input[type='email']:is(:focus, :hover) {
+    outline: none;
+  }
 }
 
 /* Utility classes */
@@ -147,4 +206,49 @@ section {
 
 .bg-gradient-secondary {
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+.primary-header {
+  margin: auto;
+  text-align: center;
+  font-size: var(--size-500);
+  text-transform: uppercase;
+  color: var(--dark-grayish-red);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.highlighted {
+  color: var(--desaturated-red);
+  font-weight: var(--fw-regular);
+}
+
+.desc {
+  margin: auto;
+  color: var(--desaturated-red);
+  max-width: 44ch;
+  padding-block: var(--size-200);
+}
+
+@media screen and (min-width: 60em) {
+  .primary-header {
+    margin-left: 0;
+    font-size: var(--size-750);
+    text-transform: uppercase;
+    color: var(--dark-grayish-red);
+    letter-spacing: 0.2em;
+    line-height: 1;
+    max-width: 3ch;
+  }
+
+  .spacing {
+    padding: var(--size-750) var(--size-xl) var(--size-500) var(--size-xl);
+  }
+
+  .desc {
+    margin-left: 0;
+    color: var(--desaturated-red);
+    max-width: 44ch;
+    padding-block: var(--size-200);
+  }
 }

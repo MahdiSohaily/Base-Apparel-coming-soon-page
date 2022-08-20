@@ -18,26 +18,29 @@
 
 <body>
   <main>
-    <header>
-      <img src="./images/logo.svg" alt="company logo">
+    <header class="spacing">
+      <img loading="lazy" src="./images/logo.svg" alt="company logo">
     </header>
     <div class="hero-image">
       <picture>
-        <source media="(max-width: 40em)" srcset="./images/hero-mobile.jpg">
-        <img src="./images/hero-desktop.jpg" alt="hero image">
+        <source loading="lazy" media="(max-width: 60em)" srcset="./images/hero-mobile.jpg">
+        <img loading="lazy" width="800" height="800" src="./images/hero-desktop.jpg" alt="hero image">
       </picture>
     </div>
-    <section>
-      <h1>We're coming soon</h1>
-
-      <p>
+    <section class="spacing">
+      <h1 class="primary-header"> <span class="highlighted">We're</span> coming soon</h1>
+      <p class="desc">
         Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our launch deals.
       </p>
-
       <form action="#" method="post">
-        <label for="email" aria-labelledby="email"></label>
-        <input type="email" name="email" id="email" placeholder=" Email Address">
+        <div class="group">
+          <label for="email" aria-labelledby="email"></label>
+        <input type="email" name="email" id="email" placeholder=" Email Address" required>
+        <button  type="submit" class="bg-gradient-secondary">
+          <img src="./images/icon-arrow.svg" alt="">
+        </button>
+        </div>
       </form>
     </section>
   </main>
