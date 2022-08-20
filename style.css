@@ -97,21 +97,7 @@ main {
     "header"
     "hero"
     "section";
-
     grid-template-rows: auto auto auto;
-
-  align-items: start;
-}
-
-@media screen and (min-width: 40em) {
-  main {
-    display: grid;
-    grid-template-areas:
-      "header hero"
-      "section hero";
-      grid-template-rows: auto 1fr;
-  }
-
 }
 
 header {
