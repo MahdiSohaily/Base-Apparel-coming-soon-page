@@ -99,6 +99,7 @@ main {
     "section";
     grid-template-rows: auto auto auto;
 }
+
 header {
   grid-area: header;
   padding: var(--size-400);
@@ -132,7 +133,8 @@ input[type='email'] {
   border: 1px solid var(--desaturated-red);
   border-radius: 100vmax;
 }
-.group{
+
+.group {
   margin-block: var(--size-200);
   width: 100%;
   position: relative;
