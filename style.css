@@ -10,12 +10,14 @@
   --fw-medium: 400;
   --fw-bold: 600;
   --size-100: 0.5em;
+  --size-150: 0.75em;
   --size-200: 1em;
   --size-300: 1.5em;
   --size-400: 2em;
   --size-500: 3em;
   --size-600: 3.5em;
   --size-700: 4em;
+  --size-750: 4.5em;
   --size-800: 5em;
   --size-900: 7em;
   --size-xl: 9em;
@@ -54,9 +56,8 @@ body {
   background:
     url("./images/bg-pattern-desktop.svg"),
     linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-position: right;
+    background-size: cover;
 }
 
 /* A elements that don't have a class get default styles */
@@ -69,14 +70,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+  height: auto;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -103,40 +97,78 @@ main {
     "header"
     "hero"
     "section";
-  align-items: start;
+    grid-template-rows: auto auto 1fr;
+}
+header {
+  grid-area: header;
 }
 
-@media screen and (min-width: 40em) {
+.hero-image {
+  grid-area: hero;
+}
+
+.hero-image picture {
+  height: inherit;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+}
+
+section {
+  grid-area: section;
+  text-align: center;
+  padding: var(--size-750) var(--size-300) var(--size-500) var(--size-300);
+}
+
+input[type='email'] {
+  padding: var(--size-100);
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: 100vmax;
+}
+
+@media screen and (min-width: 50em) {
   main {
     display: grid;
     grid-template-areas:
       "header hero"
       "section hero";
+      grid-template-rows: auto 1fr;
   }
-}
 
-header {
-  grid-area: header;
-  height: fit-content;
-}
+  .hero-image {
+    grid-area: hero;
+    height: inherit;
+    width: 100%;
+  }
+  
+  .hero-image picture {
+    height: inherit;
+    width: 100%;
+  }
 
-.hero-image {
-  grid-area: hero;
-  height: inherit;
-}
+  section {
+    grid-area: section;
+    text-align: left;
+  }
 
-.hero-image picture {
-  background-color: rebeccapurple;
-  height: inherit;
-}
+  input[type='email'] {
+    padding: var(--size-150) var(--size-300);
+    width: 70%;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    border-radius: 100vmax;
+    color: var(--desaturated-red);
+  }
 
-.hero-image img {
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-section {
-  grid-area: section;
+  input[type='email']:is(:focus, :hover){
+    outline: none;
+  }
 }
 
 /* Utility classes */
@@ -146,4 +178,36 @@ section {
 
 .bg-gradient-secondary {
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+.primary-header{
+  font-size: var(--size-500);
+  text-transform: uppercase;
+  color: var(--dark-grayish-red);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.highlighted{
+  color: var(--desaturated-red);
+  font-weight: var(--fw-regular);
+}
+
+@media screen and (min-width: 40em) {
+  .primary-header{
+    font-size: var(--size-750);
+    text-transform: uppercase;
+    color: var(--dark-grayish-red);
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+  .spacing {
+    padding:
+      var(--size-750) var(--size-xl) var(--size-500) var(--size-xl);
+  }
+}
+.desc{
+  color: var(--desaturated-red);
+  /* max-width: 44ch; */
+  padding-block: var(--size-200);
 }
