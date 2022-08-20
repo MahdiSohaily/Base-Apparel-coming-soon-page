@@ -56,8 +56,8 @@ body {
   background:
     url("./images/bg-pattern-desktop.svg"),
     linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    background-position: right;
-    background-size: cover;
+  background-position: right;
+  background-size: cover;
 }
 
 /* A elements that don't have a class get default styles */
@@ -97,7 +97,7 @@ main {
     "header"
     "hero"
     "section";
-    grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
 }
 
 header {
@@ -147,12 +147,12 @@ button {
   padding: 15px 30px;
   border: none;
   border-radius: 100vmax;
-  box-shadow: 0px 1px 8px var(--desaturated-red);
+  box-shadow: 0 1px 8px var(--desaturated-red);
 }
 
 button:hover {
   cursor: pointer;
-  box-shadow: 0px 4px 8px var(--desaturated-red);
+  box-shadow: 0 4px 8px var(--desaturated-red);
 }
 
 ::placeholder {
@@ -173,7 +173,7 @@ button:hover {
     grid-area: hero;
     height: inherit;
   }
-  
+
   .hero-image picture {
     height: inherit;
   }
@@ -232,7 +232,7 @@ button:hover {
 
 @media screen and (min-width: 60em) {
   .primary-header {
-    margin-left:0;
+    margin-left: 0;
     font-size: var(--size-750);
     text-transform: uppercase;
     color: var(--dark-grayish-red);
@@ -242,8 +242,7 @@ button:hover {
   }
 
   .spacing {
-    padding:
-      var(--size-750) var(--size-xl) var(--size-500) var(--size-xl);
+    padding: var(--size-750) var(--size-xl) var(--size-500) var(--size-xl);
   }
 
   .desc {
