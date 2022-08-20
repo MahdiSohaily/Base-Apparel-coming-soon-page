@@ -97,10 +97,11 @@ main {
     "header"
     "hero"
     "section";
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto auto;
 }
 header {
   grid-area: header;
+  padding: var(--size-400);
 }
 
 .hero-image {
@@ -115,7 +116,7 @@ header {
 .hero-image img {
   width: 100%;
   height: inherit;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 section {
@@ -125,31 +126,48 @@ section {
 }
 
 input[type='email'] {
-  padding: var(--size-100);
+  padding: var(--size-150) var(--size-300);
   width: 100%;
   background-color: transparent;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--desaturated-red);
+  border-radius: 100vmax;
+}
+.group{
+  margin-block: var(--size-200);
+  width: 100%;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 30px;
+  border: none;
   border-radius: 100vmax;
 }
 
-@media screen and (min-width: 50em) {
+::placeholder {
+  color: var(--desaturated-red);
+}
+
+@media screen and (min-width: 60em) {
   main {
     display: grid;
     grid-template-areas:
       "header hero"
       "section hero";
-      grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 60% 40%;
   }
 
   .hero-image {
     grid-area: hero;
     height: inherit;
-    width: 100%;
   }
   
   .hero-image picture {
     height: inherit;
-    width: 100%;
   }
 
   section {
@@ -157,16 +175,18 @@ input[type='email'] {
     text-align: left;
   }
 
-  input[type='email'] {
-    padding: var(--size-150) var(--size-300);
+  .group {
     width: 70%;
+  }
+
+  input[type='email'] {
     background-color: transparent;
     border: 1px solid lightgrey;
     border-radius: 100vmax;
     color: var(--desaturated-red);
   }
 
-  input[type='email']:is(:focus, :hover){
+  input[type='email']:is(:focus, :hover) {
     outline: none;
   }
 }
@@ -180,7 +200,9 @@ input[type='email'] {
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 
-.primary-header{
+.primary-header {
+  margin: auto;
+  text-align: center;
   font-size: var(--size-500);
   text-transform: uppercase;
   color: var(--dark-grayish-red);
@@ -188,26 +210,38 @@ input[type='email'] {
   line-height: 1;
 }
 
-.highlighted{
+.highlighted {
   color: var(--desaturated-red);
   font-weight: var(--fw-regular);
 }
 
-@media screen and (min-width: 40em) {
-  .primary-header{
+.desc {
+  margin: auto;
+  color: var(--desaturated-red);
+  max-width: 44ch;
+  padding-block: var(--size-200);
+}
+
+@media screen and (min-width: 60em) {
+  .primary-header {
+    margin-left:0;
     font-size: var(--size-750);
     text-transform: uppercase;
     color: var(--dark-grayish-red);
     letter-spacing: 0.2em;
     line-height: 1;
+    max-width: 3ch;
   }
+
   .spacing {
     padding:
       var(--size-750) var(--size-xl) var(--size-500) var(--size-xl);
   }
-}
-.desc{
-  color: var(--desaturated-red);
-  /* max-width: 44ch; */
-  padding-block: var(--size-200);
+
+  .desc {
+    margin-left: 0;
+    color: var(--desaturated-red);
+    max-width: 44ch;
+    padding-block: var(--size-200);
+  }
 }
