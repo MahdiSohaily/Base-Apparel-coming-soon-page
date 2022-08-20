@@ -147,6 +147,12 @@ button {
   padding: 15px 30px;
   border: none;
   border-radius: 100vmax;
+  box-shadow: 0px 1px 8px var(--desaturated-red);
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 8px var(--desaturated-red);
 }
 
 ::placeholder {
