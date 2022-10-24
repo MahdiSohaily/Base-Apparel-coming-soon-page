@@ -26,13 +26,13 @@ Users should be able to:
 ### Screenshot
 
 - Screenshot of the solution
-![Solution Screenshot](./design/desktop.png)
-- Screenshot of the solution
-![Solution Screenshot](./design/mobile.png)
+| Desktop version                              |               Mobile Version                |
+| -------------------------------------------- | :-----------------------------------------: |
+| ![Solution Screenshot](./design/desktop.png) | ![Solution Screenshot](./design/mobile.png) |
 
 ### Links
 
-- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/testimonialsgridsectionmain-yZAI0suCGf)
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/baseapparelcomingsoonpage-AQ4t40o8ut)
 - Live Site URL: [Live site URL](https://mahdisohaily.github.io/Base-Apparel-coming-soon-page/)
 
 ## My process
