@@ -27,7 +27,7 @@ Users should be able to:
 
 | Desktop version                              |               Mobile Version                |
 | -------------------------------------------- | :-----------------------------------------: |
-| ![Solution Screenshot](./design/desktop.png) | ![Solution Screenshot](./design/mobile.png) |
+| ![Solution Screenshot](./desgin/desktop.png) | ![Solution Screenshot](./desgin/mobile.png) |
 
 ### Links
 
